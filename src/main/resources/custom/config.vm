@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>$i18n.getText("recaptcha.config.label")</title>
+    <meta name="decorator" content="atl.admin">
+    $webResourceManager.requireResource("me.daviderickson.confluence.recaptcha:resources")
+  </head>
+  <body>
+    <script type="text/javascript">
+      var baseUrl = "$applicationProperties.getBaseUrl()";
+    </script>
+    <form id="admin" class="aui">
+      <div class="field-group">
+        <label for="name">$i18n.getText("recaptcha.config.publicKey.label")</label>
+        <input type="text" id="publicKey" name="publicKey" class="text">
+      </div>
+      <div class="field-group">
+        <label for="time">$i18n.getText("recaptcha.config.privateKey.label")</label>
+        <input type="text" id="privateKey" name="privateKey" class="text">
+      </div>
+      <div class="field-group">
+        <input type="submit" value="$i18n.getText("recaptcha.config.save.label")" class="button">
+      </div>
+    </form>
+  </body>
+</html>
