@@ -54,15 +54,7 @@
                                   </noscript>
                                   #fielderror('captcha')
                                 </div>
-                                #if($captchaManager.showCaptchaForCurrentUser())
-                                    <div class="field-group">
-                                        #captchaImage()
-                                        <input type='text' name='captchaResponse' value=''>
-                                    </div>
-                                    #fielderror('captcha')
-                                #end
-
-                                 <div class="field-group form-buttons compact-form-buttons">
+                                <div class="field-group form-buttons compact-form-buttons">
                                     #tag ("Submit" "value='signup.name'" "align='center'" "theme='notable'" "template='submit.vm'")
                                 </div>
                             </fieldset>
