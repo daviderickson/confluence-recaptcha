@@ -3,6 +3,7 @@
         <description>${project.description}</description>
         <version>${project.version}</version>
         <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="configure.url">/plugins/servlet/recaptcha/config</param>
     </plugin-info>
 
     <component-import key="applicationProperties" interface="com.atlassian.sal.api.ApplicationProperties" />
@@ -11,11 +12,6 @@
     <component-import key="renderer" interface="com.atlassian.templaterenderer.velocity.one.six.VelocityTemplateRenderer" />
     <component-import key="pluginSettingsFactory" interface="com.atlassian.sal.api.pluginsettings.PluginSettingsFactory" />
     <component-import key="transactionTemplate" interface="com.atlassian.sal.api.transaction.TransactionTemplate" />
-
-    <macro name="recaptcha" class="me.daviderickson.confluence.ExampleMacro" key="my-macro">
-    <!-- TODO: Add macro description -->
-    <!-- <description></description> -->
-    </macro>
 
     <resource type="i18n" name="i18n" location="me.daviderickson.confluence.i18n" />
 
@@ -35,7 +31,7 @@
       component-ref="pluginSettingsFactory" context-key="pluginSettingsFactory"
       name="Plugin Settings Factory Context Item" />
 
-    <web-item key="conf-menu-item" name="ReCaptcha Configuration" section="system.admin/configuration" weight="10">
+    <web-item key="recaptchaconfig" name="ReCaptcha Configuration" section="system.admin/configuration" weight="10">
         <description>Link to the ReCaptcha Configuration page.</description>
         <label key="recaptcha.config.label" />
         <link linkId="recaptcha-config-link">/plugins/servlet/recaptcha/config</link>

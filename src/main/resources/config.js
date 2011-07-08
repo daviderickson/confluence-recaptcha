@@ -16,7 +16,11 @@ AJS.toInit(function() {
             type: "PUT",
             contentType: "application/json",
             data: '{ "publicKey": "' + AJS.$("#publicKey").attr("value") + '", "privateKey": "' +  AJS.$("#privateKey").attr("value") + '" }',
-            processData: false
+            processData: false,
+            success: function(msg) {
+                AJS.$('#adminSubmitButton').attr('disabled', 'disabled');
+                AJS.$('#adminSubmitButton').attr('value', savedMessage);
+            }
         });
     }     
     populateForm();
@@ -24,5 +28,10 @@ AJS.toInit(function() {
     AJS.$("#admin").submit(function(e) {
         e.preventDefault();
         updateConfig();
+    });
+
+    AJS.$("#admin input[type='text']").keypress(function() {
+        AJS.$('#adminSubmitButton').removeAttr('disabled');
+        AJS.$('#adminSubmitButton').attr('value', saveMessage);
     });
 });

@@ -1,12 +1,15 @@
 <html>
   <head>
     <title>$i18n.getText("recaptcha.config.label")</title>
+    <content tag="selectedWebItem">recaptchaconfig</content>
     <meta name="decorator" content="atl.admin">
     $webResourceManager.requireResource("me.daviderickson.confluence.recaptcha:resources")
   </head>
   <body>
     <script type="text/javascript">
       var baseUrl = "$applicationProperties.getBaseUrl()";
+      var saveMessage = "$i18n.getText('recaptcha.config.save.label')";
+      var savedMessage = "$i18n.getText('recaptcha.config.saved.label')";
     </script>
     <form id="admin" class="aui">
       <div class="field-group">
@@ -18,7 +21,7 @@
         <input type="text" id="privateKey" name="privateKey" class="text">
       </div>
       <div class="field-group">
-        <input type="submit" value="$i18n.getText("recaptcha.config.save.label")" class="button">
+        <input type="submit" value="$i18n.getText("recaptcha.config.saved.label")" class="button" id="adminSubmitButton" disabled>
       </div>
     </form>
   </body>
